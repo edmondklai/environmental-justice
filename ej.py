@@ -30,7 +30,7 @@ def main():
     c.set_field(fields)
     c.set_geoFilter(geoFilter)
     c.contruct_query()
-    census_frame = c.get()
+    census_frame = c.download_data()
 
     print(census_frame.head())
     census_frame.to_csv("outFile.csv", sep=',', header=True)
