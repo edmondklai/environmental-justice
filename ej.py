@@ -8,8 +8,18 @@ def main():
     c.set_survey("acs5")
     c.set_field(["NAME",
                  "GEOID",
-                 "B05010_001E",
-                 "B01001_001E"])
+                 "B17017_001E",
+                 "B17017_002E",
+                 "B02001_001E",
+                 "B02001_003E",
+                 "B02001_004E",
+                 "B02001_005E",
+                 "B02001_006E",
+                 "B02001_007E",
+                 "B02001_008E",
+                 "B03003_001E",
+                 "B03003_003E"
+                 ])
 
     c.set_geoFilter(["for=block+group:*",
                      "in=tract:*",
@@ -17,9 +27,9 @@ def main():
                      "in=state:17"])
 
     c.contruct_query()
-    a = c.get()
+    cesnus_frame = c.get()
     print(a.head())
-    a.to_csv("file", sep=',', header=True)
+    censsu_frame.to_csv("outFile", sep=',', header=True)
 
 
 if __name__ == '__main__':
